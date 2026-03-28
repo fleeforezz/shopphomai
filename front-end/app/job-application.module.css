@@ -1,0 +1,410 @@
+/* app/job-application/job-application.module.css */
+
+.container {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --surface2: #faf9f7;
+  --border: #e2ddd6;
+  --accent: #b07d3a;
+  --accent2: #8a5e1e;
+  --accent-glow: rgba(176,125,58,0.12);
+  --text: #1a1714;
+  --muted: #6b6560;
+  --danger: #c0392b;
+  --success: #27795b;
+  --radius: 12px;
+  --radius-sm: 8px;
+  
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+.headerInner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logoRing {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  background: var(--accent-glow);
+}
+.brand { font-weight: 700; font-size: 1rem; letter-spacing: .04em; color: var(--accent2); }
+.brand span { color: var(--muted); font-weight: 400; }
+
+/* ── JD DOCUMENT ─────────────────────────────────── */
+.jdWrap {
+  padding: 64px 24px;
+  background: var(--surface);
+}
+.jdDoc {
+  max-width: 800px; margin: 0 auto;
+  background: var(--surface2);
+  border-radius: var(--radius);
+  padding: 48px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+.jdTitlebar {
+  background: #1a1714;
+  padding: 18px 28px;
+  text-align: center;
+  margin-bottom: 24px;
+  margin: -48px -48px 24px -48px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.jdTitlebar h1 {
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.3;
+  margin: 0;
+}
+.jdSectionLabel {
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  width: fit-content;
+  margin-bottom: 24px;
+}
+.jdSectionLabel p {
+  font-size: .85rem; font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+}
+.jdMetaRow {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 32px;
+}
+.jdChip {
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: .85rem;
+  color: var(--text);
+  font-weight: 500;
+}
+.jdBody {
+  display: flex; flex-direction: column; gap: 32px;
+}
+.jdSec {
+  padding: 0;
+}
+.jdSecTitle {
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.jdSecTitle .ico { font-size: 1.2em; }
+.jdPara {
+  font-size: .95rem; line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.jdPara:last-child { margin-bottom: 0; }
+.jdSub {
+  font-size: .95rem; font-weight: 600;
+  color: var(--text);
+  margin-top: 20px; margin-bottom: 10px;
+}
+.jdList {
+  list-style: none; padding-left: 0;
+  margin-bottom: 0;
+}
+.jdList li {
+  font-size: .95rem; line-height: 1.6;
+  color: var(--text);
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+.jdList li::before {
+  content: '•';
+  color: var(--accent);
+  position: absolute; left: 0;
+  font-weight: 700;
+}
+.jdBenefitGroup {
+  margin-bottom: 24px;
+}
+.jdBenefitTitle {
+  font-size: 1rem; font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+/* ── DIVIDER ─────────────────────────────────────── */
+.dividerSection {
+  max-width: 900px; margin: 0 auto; padding: 0 24px;
+}
+.stepDivider {
+  display: flex; align-items: center; gap: 14px;
+  padding: 36px 0 28px;
+}
+.stepDivider hr { flex: 1; border: none; border-top: 1px solid var(--border); }
+.stepLabel {
+  font-size: .82rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent);
+  display: flex; align-items: center; gap: 8px;
+}
+.stepLabel .num {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+}
+
+/* ── FORM ────────────────────────────────────────── */
+.formSection {
+  max-width: 900px; margin: 0 auto; padding: 0 24px 64px;
+}
+.formSection h2 {
+  font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em;
+  margin-bottom: 4px;
+}
+.formSection p.sub { font-size: .88rem; color: var(--muted); margin-bottom: 28px; }
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.full { grid-column: 1 / -1; }
+
+.field {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.field label {
+  font-size: .8rem; font-weight: 600;
+  letter-spacing: .04em; color: var(--muted);
+  text-transform: uppercase;
+}
+.field input,
+.field select,
+.field textarea {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: .93rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: #aaa49c; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.field textarea { resize: vertical; min-height: 100px; }
+
+.invalid input,
+.invalid select,
+.invalid textarea {
+  border-color: var(--danger) !important;
+}
+
+.formGroupTitle {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 10px;
+  margin: 8px 0 4px;
+}
+.formGroupTitle h3 {
+  font-size: .78rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+.formGroupTitle hr { flex: 1; border: none; border-top: 1px solid var(--border); }
+
+/* ── DYNAMIC ROWS ────────────────────────────────── */
+.dynSection { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 12px; }
+.dynRow {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  position: relative;
+}
+.eduRow { grid-template-columns: 1fr 1fr 1fr; }
+.expRow { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.removeBtn {
+  position: absolute; top: 10px; right: 12px;
+  background: none; border: none;
+  color: var(--muted); cursor: pointer;
+  font-size: 16px; line-height: 1;
+  transition: color .2s;
+}
+.removeBtn:hover { color: var(--danger); }
+
+.addBtn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: none;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 9px 16px;
+  color: var(--muted);
+  font-size: .85rem; font-family: inherit;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+  width: fit-content;
+}
+.addBtn:hover { border-color: var(--accent); color: var(--accent); }
+.addBtn .plus { font-size: 18px; line-height: 1; }
+
+/* ── FILE UPLOAD ─────────────────────────────────── */
+.uploadZone {
+  grid-column: 1 / -1;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.uploadZone:hover, .uploadZone.over {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+.uploadZone input[type="file"] { display: none; }
+.uploadZone .uploadIcon { font-size: 32px; }
+.uploadZone p { font-size: .88rem; color: var(--muted); text-align: center; }
+.uploadZone p strong { color: var(--text); }
+.fileName {
+  font-size: .82rem; color: var(--success);
+  display: none; align-items: center; gap: 6px;
+}
+.fileName.visible { display: flex; }
+
+/* ── AGREEMENT ───────────────────────────────────── */
+.agreeRow {
+  grid-column: 1 / -1;
+  display: flex; align-items: flex-start; gap: 10px;
+  margin-top: 4px;
+}
+.agreeRow input[type="checkbox"] {
+  width: 18px; height: 18px; flex-shrink: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+  margin-top: 2px;
+}
+.agreeRow label {
+  font-size: .85rem; color: var(--muted); cursor: pointer;
+}
+.agreeRow label a { color: var(--accent); text-decoration: none; }
+.agreeRow label a:hover { text-decoration: underline; }
+
+/* ── SUBMIT ──────────────────────────────────────── */
+.submitRow {
+  grid-column: 1 / -1;
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-top: 8px;
+}
+.btnPrimary {
+  background: linear-gradient(135deg, var(--accent) 0%, #b88a4a 100%);
+  color: #0d0d0f;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 13px 32px;
+  font-size: .93rem; font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: .02em;
+  transition: opacity .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 4px 20px rgba(201,169,110,0.3);
+}
+.btnPrimary:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(201,169,110,0.4); }
+.btnPrimary:active { transform: translateY(0); }
+.btnPrimary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btnOutline {
+  background: none;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 13px 24px;
+  font-size: .93rem; font-family: inherit;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.btnOutline:hover { border-color: var(--muted); color: var(--text); }
+
+/* ── SUCCESS TOAST ───────────────────────────────── */
+.toast {
+  position: fixed; bottom: 28px; right: 28px;
+  background: var(--surface2);
+  border: 1px solid var(--success);
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: .88rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transform: translateY(120%);
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+  z-index: 200;
+}
+.toast.show { transform: translateY(0); }
+.toast .check { color: var(--success); font-size: 20px; }
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media(max-width: 768px) {
+  .jdDoc { padding: 32px; }
+  .jdTitlebar { margin: -32px -32px 24px -32px; }
+  .jdTitlebar h1 { font-size: 1.5rem; }
+  .jdSecTitle { font-size: 1rem; }
+  .jdPara, .jdSub, .jdList li, .jdChip { font-size: .9rem; }
+}
+
+@media(max-width: 640px) {
+  .headerInner { padding: 0 16px; }
+  .formGrid { grid-template-columns: 1fr; }
+  .full { grid-column: 1; }
+  .formGroupTitle, .dynSection, .uploadZone, .agreeRow, .submitRow { grid-column: 1; }
+  .dynRow.eduRow, .dynRow.expRow { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 480px) {
+  .jdDoc { padding: 24px; }
+  .jdTitlebar { margin: -24px -24px 24px -24px; }
+  .jdTitlebar h1 { font-size: 1.3rem; }
+  .jdSectionLabel { padding: 6px 12px; }
+  .jdSectionLabel p { font-size: .8rem; }
+  .jdMetaRow { gap: 8px; }
+  .jdChip { padding: 6px 10px; font-size: .8rem; }
+  .jdSecTitle { font-size: .95rem; }
+  .jdPara, .jdSub, .jdList li, .jdBenefitTitle { font-size: .85rem; }
+  .jdList li { padding-left: 18px; }
+}
