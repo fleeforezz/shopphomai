@@ -106,7 +106,7 @@ export default function JobApplicationPage() {
     setInvalidFields(newInvalidFields);
 
     if (newInvalidFields.size > 0) {
-      firstInvalid?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      (firstInvalid as HTMLElement | null)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
 
@@ -332,7 +332,7 @@ export default function JobApplicationPage() {
             <div className={styles.formGroupTitle}><h3>Education</h3><hr /></div>
             <div className={styles.dynSection}>
               {eduList.map((edu) => (
-                <div key={edu.id} className={`${styles.dynRow} ${styles.eduRow}`}>
+                <div key={`edu-${edu.id}`} className={`${styles.dynRow} ${styles.eduRow}`}>
                   <button type="button" className={styles.removeBtn} onClick={() => removeEdu(edu.id)} title="Remove">✕</button>
                   <div className={styles.field}>
                     <label>School / University</label>
@@ -378,7 +378,7 @@ export default function JobApplicationPage() {
             <div className={styles.formGroupTitle}><h3>Work Experience</h3><hr /></div>
             <div className={styles.dynSection}>
               {expList.map((exp) => (
-                <div key={exp.id} className={`${styles.dynRow} ${styles.expRow}`}>
+                <div key={`exp-${exp.id}`} className={`${styles.dynRow} ${styles.expRow}`}>
                   <button type="button" className={styles.removeBtn} onClick={() => removeExp(exp.id)} title="Remove">✕</button>
                   <div className={styles.field}>
                     <label>Company</label>
